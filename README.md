@@ -5,7 +5,7 @@
 
 ### Get Server List
 
-Return Game Server List 
+Return GameServerID List 
 
 * API: [BaseURL]
 * Method: POST
@@ -28,7 +28,7 @@ Ex:
 ------
 
 ### User Information
-Return User Information associated with **SohaID** and **GameServer**
+Return User Information associated with **SohaID** and **GameServerID**
 
 * API: [BaseURL]
 * Method: POST
@@ -52,6 +52,7 @@ Ex:
         "Level": 8,                                // Profile Level
         "Avatar": 0,                               // Profile AvatarID
         "Frame": 0,                                // Profile AvatarFrameID
+        "Diamond": 1603                            // Diamond
         "Name": "HuySOHA",                         // Profile Name
         "VIP": 1,
         "Guild": {
@@ -59,5 +60,39 @@ Ex:
             "Role": "junior"
         }
     }
+}
+```
+
+------
+
+### Reduce User Currency
+Reduce in game currency associated with **SohaID** and **GameServerID**
+
+* API: [BaseURL]
+* Method: POST
+* Arguments:  
+
+    | Params        | Value           
+    | ------------- |-------------
+	| method      | sh_reduce_currency
+   | shID            | SohaID
+   | serverID     | GameServerID
+   | amount     | Possitive number amount of currency
+   | type | Currency Type ( Currently only support (Gold, Diamond) )
+
+* Response: Error
+
+```javascript
+{
+    "error": "Amount must greater than 0"       //Reason
+}
+```
+
+* Response: Success
+
+Ex:
+```javascript
+{
+    "status": "ok"
 }
 ```
