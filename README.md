@@ -96,6 +96,8 @@ Ex:
     "status": "ok"
 }
 ```
+------
+
 ### Send User Gift
 Send gift email to user associated with **SohaID** and **GameServerID**
 
