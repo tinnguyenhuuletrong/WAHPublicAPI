@@ -105,7 +105,7 @@ Send gift email to user associated with **SohaID** and **GameServerID**
 
     | Params        | Value           
     | ------------- |-------------
-    | method      | sh_reduce_currency
+    | method      | sh_send_gift
    | shID            | SohaID
    | serverID     | GameServerID
    | type     | Gift Type ( Must be 'currency' or 'item' )
