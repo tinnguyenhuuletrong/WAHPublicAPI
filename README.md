@@ -36,7 +36,7 @@ Return User Information associated with **SohaID** and **GameServerID**
 
     | Params        | Value           
     | ------------- |-------------
-	| method      | sh_user_info
+    | method      | sh_user_info
    | shID            | SohaID
    | serverID     | GameServerID
 
@@ -74,7 +74,7 @@ Reduce in game currency associated with **SohaID** and **GameServerID**
 
     | Params        | Value           
     | ------------- |-------------
-	| method      | sh_reduce_currency
+    | method      | sh_reduce_currency
    | shID            | SohaID
    | serverID     | GameServerID
    | amount     | Possitive number amount of currency
@@ -85,6 +85,38 @@ Reduce in game currency associated with **SohaID** and **GameServerID**
 ```javascript
 {
     "error": "Amount must greater than 0"       //Reason
+}
+```
+
+* Response: Success
+
+Ex:
+```javascript
+{
+    "status": "ok"
+}
+```
+### Send User Gift
+Send gift email to user associated with **SohaID** and **GameServerID**
+
+* API: [BaseURL]
+* Method: POST
+* Arguments:  
+
+    | Params        | Value           
+    | ------------- |-------------
+    | method      | sh_reduce_currency
+   | shID            | SohaID
+   | serverID     | GameServerID
+   | type     | Gift Type ( Must be 'currency' or 'item' )
+   | ingameid | Item in game ID ( Reference in [Giftlist](data/dataGiftList.json) )
+   | amount | Number of Item
+
+* Response: Error
+
+```javascript
+{
+    "error": "Invalid Item InGameID"       //Reason
 }
 ```
 
